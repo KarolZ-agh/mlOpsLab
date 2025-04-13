@@ -7,7 +7,7 @@ class Settings(BaseSettings):
     APP_NAME: str
 
     # @validator("environment") # obsolete
-    @field_validator("environment", mode="before")
+    @field_validator("ENVIRONMENT", mode="before")
     @classmethod
     def validate_environment(cls, value):
         # prepare validator that will check whether the value of ENVIRONMENT is in (dev, test, prod)
